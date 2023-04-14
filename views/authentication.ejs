@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Authenticated</title>
+    <style>
+       div{
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            font-weight: 700;
+        }
+        input{
+            width:360px;
+        }
+        button{
+            background-color: rgb(21, 203, 4);
+            font-size: 1.5rem;
+            letter-spacing: 0.8px;
+            color:white;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border: 2px solid rgb(184, 196, 224);
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fill out the form:</h2>
+    <form action="/authentication/check" method="post">
+        <div>
+            <label for="username">Username</label>
+        </div>
+        <div>
+            <input type="text" name="username" id="username" placeholder="rohitPandey">
+        </div>
+        <div>
+            <label for="password">Password</label>
+        </div>
+        <div>
+            <input type="text" name="password" id="password" placeholder="rohit125">
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

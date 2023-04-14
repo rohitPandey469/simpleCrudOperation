@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing The Product</title>
+    <style>
+        div{
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            font-weight: 700;
+        }
+        input,select{
+            width:360px;
+        }
+        button{
+            background-color: rgb(21, 203, 4);
+            font-size: 1.5rem;
+            letter-spacing: 0.8px;
+            color:white;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border: 2px solid rgb(184, 196, 224);
+            border-radius: 1rem;
+        }
+        .cancel{
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit <em><%=product.name%></em> Product</h2>
+    <form action="/foodproducts/<%=product._id%>?_method=PUT" method="post">
+        <div>
+            <label for="name">Name</label>
+        </div>
+        <div>
+            <input type="text" for="name" id="name" name="name" value="<%=product.name%>">
+        </div>
+        <div>
+            <label for="price">Price($)</label>
+        </div>
+        <div>
+            <input type="number" for="price" id="price" name="price" value="<%=product.price%>">
+        </div>
+        <div>
+            <label for="Category">Category</label>
+        </div>
+        <div>
+            <Select name="category" id="category" >
+                <% for(let category of categories){ %>
+                    <option value="<%=category%>" <%= product.category === category ? 'selected': '' %>><%=category%></option>
+                    <% } %>
+            </Select>
+        </div>
+        <button>Submit</button>
+    </form>
+    <div class="cancel"><a href="/foodproducts/<%=product._id%>"><em>Cancel</em></a></div>
+</body>
+</html>

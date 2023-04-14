@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%=product.name%> </title>
+    <style>
+        form{
+            display: inline-block;
+        }
+        .edit{
+            background-color: rgb(57, 106, 220);
+            font-size: 1.5rem;
+            letter-spacing: 0.8px;
+            color:white;
+            padding: 0.5rem;
+            border: 2px solid rgb(184, 196, 224);
+            border-radius: 1rem;
+        }
+        .delete{
+            background-color: rgb(233, 59, 59);
+            font-size: 1.5rem;
+            letter-spacing: 0.8px;
+            color:white;
+            padding: 0.5rem;
+            border: 2px solid rgb(241, 219, 219);
+            border-radius: 1rem;
+        }
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h2> YOUR REQUIRED FOOD PRODUCT- </h1>
+        <ul>
+            <li><h3> Name: <%=product.name%> </h3></li>
+            <li><h3>Price:$<%=product.price%> </h3></li>
+            <li><h3> Category: <%=product.category%> </h3></li>
+        </ul>
+        <form action="/foodproducts/<%=product._id%>/edit">
+            <button class="edit">Edit</button>
+        </form>
+        <form action="/foodproducts/<%=product._id%>?_method=DELETE" method="post">
+        <button class="delete">Delete</button>
+        </form>
+        <div><a href="/foodproducts"><em>To all products</em></a></div>
+</body>
+</html>

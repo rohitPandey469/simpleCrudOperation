@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Food Products</title>
+    <style>
+      h2 {
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      a {
+        text-decoration: none;
+        color: green;
+      }
+      form{
+        display: inline-block;
+      }
+      button{
+        background: transparent;
+        color: red;
+        font-style: italic;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All food products</h1>
+    <ul>
+      <% for(let product of products){ %>
+      <li>
+        <h2><%=product.name%></h2>
+        &nbsp; <em><a href="/foodproducts/<%=product._id%>">view</a></em>
+        &nbsp;<em><form action="/foodproducts/<%=product._id%>?_method=DELETE" method="post"><button>delete</button></form></em>
+      </li>
+      <% } %>
+    </ul>
+    <h2>To Add A New Product    &nbsp;</h2><a href="/foodproducts/new">click here</a>
+  </body>
+</html>
